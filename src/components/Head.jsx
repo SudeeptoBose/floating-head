@@ -13,7 +13,7 @@ export function Head(props) {
 
   const group = useRef()
 
-  const { nodes, materials } = useGLTF('/../src/components/head-transformed.glb')
+  const { nodes, materials } = useGLTF('/head-transformed.glb')
 
   useFrame((state, delta)=>{
     easing.dampE(group.current.rotation, [-state.pointer.y *0.4, state.pointer.x, 0, 0.25, delta])
@@ -28,4 +28,4 @@ export function Head(props) {
   )
 }
 
-useGLTF.preload('/../src/components/head-transformed.glb')
+useGLTF.preload('/head-transformed.glb')

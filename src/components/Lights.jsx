@@ -8,7 +8,7 @@ const Lights = () => {
     const pointLight2 = useRef()
 
     const colorCode = '#1E566C'
-    const colorCode2 = '#ffffff'
+    const colorCode2 = '#ff0000'
 
     useFrame((state, delta)=>{
         easing.damp3(pointLight1.current.position, [Math.sin(state.clock.elapsedTime) + 2, 0, Math.sin(state.clock.elapsedTime)+2], 0.25, delta)
@@ -36,8 +36,8 @@ const Lights = () => {
             position={[-2,0,2]}           
             castShadow 
             shadow-normalBias={0.04}
-            args={[colorCode]}  
-            intensity={ 500 }
+            args={[colorCode2]}  
+            intensity={ 200 }
             decay={1}
             shadow-camera-far= {50}
             shadow-camera-top= {10}

@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber"
 import Experience from "./Experience"
+import Footer from "./components/Footer"
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <color args={['#000000']} attach={'background'}/>
       <Experience/>
     </Canvas>
+    <Footer/>
     </>
   )
 }
