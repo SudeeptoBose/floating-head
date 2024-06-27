@@ -6,11 +6,21 @@ Files: public/head.glb [416.54KB] > D:\Sudeepto\floating-head\src\components\hea
 
 import React, { useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
+import { easing } from 'maath'
 
 export function Head(props) {
+
+  const group = useRef()
+
   const { nodes, materials } = useGLTF('/../src/components/head-transformed.glb')
+
+  useFrame((state, delta)=>{
+    easing.dampE(group.current.rotation, [-state.pointer.y *0.4, state.pointer.x, 0, 0.25, delta])
+  })
+
   return (
-    <group {...props} dispose={null}>
+    <group ref={group}{...props} dispose={null}>
       <group name="Scene">
         <mesh name="BSurfaceMesh" geometry={nodes.BSurfaceMesh.geometry} material={materials['Material.001']} />
       </group>
