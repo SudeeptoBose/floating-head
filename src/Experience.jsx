@@ -11,9 +11,6 @@ const Experience = () => {
         <Head position={[0,1,0]} scale={[10,10,10]}/>
         <Lights/>
         <Environment preset='sunset' environmentIntensity={0.01}/>
-        {/* <EffectComposer>
-          <Bloom luminanceThreshold={0.7}/>
-        </EffectComposer> */}
     </>
   )
 }
