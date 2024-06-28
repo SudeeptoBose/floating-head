@@ -22,7 +22,7 @@ const Lights = () => {
             castShadow 
             shadow-normalBias={0.04}
             args={[colorCode]}  
-            intensity={ 500 }
+            intensity={ 5 }
             decay={1}
             shadow-camera-far= {50}
             shadow-camera-top= {10}
@@ -37,7 +37,7 @@ const Lights = () => {
             castShadow 
             shadow-normalBias={0.04}
             args={[colorCode2]}  
-            intensity={ 200 }
+            intensity={ 5 }
             decay={1}
             shadow-camera-far= {50}
             shadow-camera-top= {10}
