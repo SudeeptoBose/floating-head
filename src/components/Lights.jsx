@@ -11,7 +11,6 @@ const Lights = () => {
 	const colorCode2 = '#ff0000'
 
 	useFrame((state, delta) => {
-		console.log(delta + 1)
 		easing.damp3(pointLight1.current.position, [Math.sin(state.clock.elapsedTime) *-4, -1, Math.cos(state.clock.elapsedTime) + 4], 0.25, delta + 0.5)
 		easing.damp3(pointLight2.current.position, [ 0 , Math.cos(state.clock.elapsedTime) * 2, 3 ], 0.25, delta)
 	})
