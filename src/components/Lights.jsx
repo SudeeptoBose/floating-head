@@ -11,18 +11,18 @@ const Lights = () => {
 	const colorCode2 = '#ff0000'
 
 	useFrame((state, delta) => {
-		easing.damp3(pointLight1.current.position, [Math.sin(state.clock.elapsedTime) + 2, 0, Math.sin(state.clock.elapsedTime) + 2], 0.25, delta)
-		easing.damp3(pointLight2.current.position, [-Math.cos(state.clock.elapsedTime) * 2, 1, Math.sin(state.clock.elapsedTime) + 3], 0.25, delta)
+		console.log(delta + 1)
+		easing.damp3(pointLight1.current.position, [Math.sin(state.clock.elapsedTime) *-4, -1, Math.cos(state.clock.elapsedTime) + 4], 0.25, delta + 0.5)
+		easing.damp3(pointLight2.current.position, [ 0 , Math.cos(state.clock.elapsedTime) * 2, 3 ], 0.25, delta)
 	})
 	return (
 		<>
 			<pointLight
 				ref={pointLight1}
-				position={[2, 0, 2]}
 				castShadow
-				shadow-normalBias={0.04}
+				shadow-normalBias={1.4}
 				args={[colorCode]}
-				intensity={5}
+				intensity={500}
 				decay={1}
 				shadow-camera-far={50}
 				shadow-camera-top={10}
@@ -33,11 +33,10 @@ const Lights = () => {
 
 			<pointLight
 				ref={pointLight2}
-				position={[-2, 0, 2]}
 				castShadow
-				shadow-normalBias={0.04}
+				shadow-normalBias={1.4}
 				args={[colorCode2]}
-				intensity={5}
+				intensity={200}
 				decay={1}
 				shadow-camera-far={50}
 				shadow-camera-top={10}
